@@ -222,7 +222,7 @@
 	<style name="skin_thumbtext_style" url="%SWFPATH%/plugins/textfield.swf" align="bottom" width="100%" autoheight="true" y="5" enabled="false" background="false" border="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-size:10px;'" textshadow="get:skin_settings.design_text_shadow" />
 
 	<!-- skin_hotspotstyle - style for the hotspots -->
-	<style name="skin_hotspotstyle_2" url="arrow.png" scale="0.5" edge="top" distorted="true"
+	<style name="skin_hotspotstyle" url="arrow.png" scale="0.5" edge="top" distorted="true"
 	       tooltip=""
 	       onclick="if(linkedscene, set(enabled,false); skin_hidetooltips(); tween(depth|alpha|oy|rx, 4000|0.0|-50|-60, 0.5, default, loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); ); );"
 	       onover="tween(scale,0.55);"
