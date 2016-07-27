@@ -1,2 +1,0 @@
-# guort.github.io
-test
