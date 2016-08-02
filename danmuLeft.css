@@ -3,39 +3,40 @@
     width: 100%;
     height: 100%;
     /*overflow: hidden;*/
-    z-index: 9999;
+    z-index: 1000;
     position: absolute;
 }
-.flyLeft {
-    width: 400px;
-    height: 320px;
+.dmFly{
+    width: 200px;
+    height: 160px;
     position: absolute;
     left: 100%;
-    z-index: 9999;
-    -webkit-transform:translate3d(0,0,0);
+    z-index: 1001;
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
 }
 .flyLeft .head {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    -webkit-border-radius: 30px;
+    -webkit-border-radius: 15px;
     overflow: hidden;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .head img {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 .flyLeft .description {
     display: inline-block;
-    height: 60px;
-    line-height: 60px;
-    font-size: 32px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
     color: #ffad0d;
 }
 .d_img {
-    width: 220px;
-    height: 140px;
+    width: 110px;
+    height: 70px;
     background-repeat: no-repeat;
     background-size: contain;
     -webkit-background-size: contain;
