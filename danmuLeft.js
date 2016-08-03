@@ -9,7 +9,7 @@ window.onload = function () {
             , {'name': 'four', 'head': './images/tx2.jpg', 'des': '描述...', 'img': './images/che.png', 'speed': '3'}
             , {'name': 'five', 'head': './images/tx.jpg', 'des': '恭喜你中奖了', 'img': './images/hua.png'}
             , {'name': 'six', 'head': './images/tx2.jpg', 'des': '描述...', 'img': './images/paoche.png', 'speed': '3'}]
-        // , "line": "1"
+        , "line": "1"
     };
 
     var btn = document.getElementById("btn");
@@ -20,7 +20,8 @@ window.onload = function () {
             'head': './images/tx2.jpg',
             'des': '描述...',
             'img': './images/paoche.png',
-            'speed': '5'
+            'speed': '5',
+            'size':'.7'
         });
     };
 
@@ -39,17 +40,7 @@ window.onload = function () {
         targetDom.appendChild(danmu);
         targetDom.style.position = "relative";
 
-        clearInterval(timer);
-        // 不间断的获取数据
-        timer = setInterval(function () {
-            if (Json.data[0]) {
-                danmuLeft(Json);
-            }
-        }, dTime);
-
         function danmuLeft(Json) {
-
-            //console.log(Json.data[0]);
 
             var data = Json.data[0],
                 danmuWidth,
@@ -65,7 +56,6 @@ window.onload = function () {
             domP.className = "dmFly";
             danmuWidth = danmu.offsetWidth;
             danmuHeight = danmu.offsetHeight;
-            //alert(1);
 
             html += "<div class='flyLeft'><div class='head'>";
             html += "<img src=\"" + data.head + "\"></div>";
@@ -96,10 +86,11 @@ window.onload = function () {
             dom.style.top = mathHeight + "px";
 
             dom.style.webkitTransition = "-webkit-transform " + speed + "s linear";
-            dom.style.webkitTransform = "translate3d(-" + (danmuWidth + domW) + "px," + 0 + "," + 0 + ")";
+            //先平移，后缩放 顺序很重要
+            dom.style.webkitTransform = "translate3d(-" + (danmuWidth + domW) + "px," + 0 + "," + 0 + ") "
+                                        +"scale3d(" + size + "," + size + "," + "1" + ")";
             //dom.style.webkitTransform = "translateX(-" + (danmuWidth + domW) + "px)";
             //dom.style.left = "-200px";
-            //animate(dom,-domW,speed*1000);
 
             dom.addEventListener("webkitTransitionEnd", function () {
                 danmu.removeChild(this);
@@ -109,6 +100,13 @@ window.onload = function () {
 
         }
 
+        clearInterval(timer);
+        // 不间断的获取数据
+        timer = setInterval(function () {
+            if (Json.data[0]) {
+                danmuLeft(Json);
+            }
+        }, dTime);
     }
 
 };
