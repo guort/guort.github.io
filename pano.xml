@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node2">
+  <panorama id="node2">
+    <input leveltilesize="510" levelbiashidpi="0.400" leveltileurl="tiles/凌倒景/cf_%c/l_%l/c_%x/tile_%y.jpg" width="2102" levelingpitch="0" levelingroll="0" height="2102" overlap="1" levelbias="0.400">
+      <level width="2102" preload="0" height="2102" predecode="0"/>
+      <level width="1051" preload="0" height="1051" predecode="0"/>
+      <level width="525" preload="0" height="525" predecode="0"/>
+      <level width="262" preload="1" height="262" predecode="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view fovmode="0" pannorth="0">
+      <start fov="70" pan="0" tilt="0"/>
+      <min fov="5" pan="-180" tilt="-43.1902"/>
+      <max fov="120" pan="180" tilt="43.1902"/>
+    </view>
+    <userdata source="" info="" description="" tags="" longitude="" author="" copyright="" comment="" datetime="" latitude="" title=""/>
+    <hotspots width="180" wordwrap="1" height="20">
+      <label width="180" wordwrap="1" backgroundcolor="0xffffff" textalpha="1" border="1" textcolor="0x000000" height="20" enabled="1" background="1" borderalpha="1" borderradius="1" bordercolor="0x000000" backgroundalpha="1"/>
+      <polystyle handcursor="1" mode="0" backgroundcolor="0x0000ff" borderalpha="1" bordercolor="0x0000ff" backgroundalpha="0.2509803921568627"/>
+    </hotspots>
+    <media/>
+    <transition type="crossdissolve" enabled="0" zoomfov="20" zoomin="0" zoomoutpause="1" softedge="0" blendtime="1" zoomspeed="2" zoomout="0" blendcolor="0x000000"/>
+    <control hideabout="0" lockedkeyboard="0" sensitivity="8" speedwheel="1" dblclickfullscreen="0" lockedmouse="0" lockedkeyboardzoom="0" lockedwheel="0" contextfullscreen="0" invertcontrol="1" invertwheel="0" simulatemass="1"/>
+  </panorama>
+</tour>

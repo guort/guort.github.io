@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Pano2VR project file  -->
+<pano2vrconfig>
+  <panorama>
+    <id>node1</id>
+    <input>
+      <patch/>
+      <type>auto</type>
+      <filename>../1/395547155325696396.jpg</filename>
+      <levelpitch>0</levelpitch>
+      <levelroll>0</levelroll>
+    </input>
+    <viewingparameter>
+      <pan/>
+      <tilt/>
+      <fov/>
+      <pannorth>0</pannorth>
+    </viewingparameter>
+    <userdata>
+      <datetime>2016:08:10 16:36:26</datetime>
+      <tags>1</tags>
+    </userdata>
+    <floorplans/>
+    <hotspots/>
+    <output>
+      <htmlcss>
+        <html>
+          <enabled>1</enabled>
+          <filename>../aaaa/index.html</filename>
+          <values>
+            <value id="gginfo">false</value>
+            <value id="gyro">false</value>
+            <value id="gyrodisable">false</value>
+            <value id="gyronorth">false</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">false</value>
+            <value id="swf"></value>
+            <value id="swffirst">false</value>
+            <value id="swfgeneric">false</value>
+          </values>
+        </html>
+        <facequality/>
+        <transition/>
+        <autorotate/>
+        <soundstransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <tilesize>4604</tilesize>
+        <filename>../aaaa/pano.xml</filename>
+        <skinfile>cardboard.ggsk</skinfile>
+      </htmlcss>
+      <htmlcss>
+        <html>
+          <values>
+            <value id="gginfo">false</value>
+            <value id="gyro">false</value>
+            <value id="gyrodisable">false</value>
+            <value id="gyronorth">false</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">false</value>
+            <value id="swf"></value>
+            <value id="swffirst">false</value>
+            <value id="swfgeneric">false</value>
+          </values>
+          <enabled>1</enabled>
+          <filename>output/index.html</filename>
+        </html>
+        <facequality/>
+        <transition/>
+        <autorotate/>
+        <soundstransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <tilesize>4604</tilesize>
+        <filename>output/pano.xml</filename>
+      </htmlcss>
+      <htmlcss>
+        <html>
+          <values>
+            <value id="gginfo">false</value>
+            <value id="gyro">false</value>
+            <value id="gyrodisable">false</value>
+            <value id="gyronorth">false</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">false</value>
+            <value id="swf"></value>
+            <value id="swffirst">false</value>
+            <value id="swfgeneric">false</value>
+          </values>
+          <enabled>1</enabled>
+          <filename>output-1/index.html</filename>
+        </html>
+        <facequality/>
+        <transition/>
+        <autorotate/>
+        <soundstransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <tilesize>4604</tilesize>
+        <filename>output-1/pano.xml</filename>
+      </htmlcss>
+      <htmlcss>
+        <html>
+          <values>
+            <value id="gginfo">false</value>
+            <value id="gyro">false</value>
+            <value id="gyrodisable">false</value>
+            <value id="gyronorth">false</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">false</value>
+            <value id="swf"></value>
+            <value id="swffirst">false</value>
+            <value id="swfgeneric">false</value>
+          </values>
+          <enabled>1</enabled>
+          <filename>output-2/index.html</filename>
+        </html>
+        <facequality/>
+        <transition/>
+        <autorotate/>
+        <soundstransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <tilesize>4604</tilesize>
+        <filename>output-2/pano.xml</filename>
+      </htmlcss>
+      <htmlcss>
+        <html>
+          <values>
+            <value id="gginfo">false</value>
+            <value id="gyro">false</value>
+            <value id="gyrodisable">false</value>
+            <value id="gyronorth">false</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">false</value>
+            <value id="swf"></value>
+            <value id="swffirst">false</value>
+            <value id="swfgeneric">false</value>
+          </values>
+          <enabled>1</enabled>
+          <filename>output-3/index.html</filename>
+        </html>
+        <facequality/>
+        <transition/>
+        <autorotate/>
+        <soundstransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <tilesize>4604</tilesize>
+        <filename>output-3/pano.xml</filename>
+      </htmlcss>
+    </output>
+    <sounds/>
+  </panorama>
+</pano2vrconfig>
