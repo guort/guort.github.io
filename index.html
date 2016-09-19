@@ -1,63 +1,100 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-		<title></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="mobile-web-app-capable" content="yes" />		
-		<style type="text/css" title="Default">
-			body, div, h1, h2, h3, span, p {
-				font-family: Verdana,Arial,Helvetica,sans-serif;
-			}
-			/* fullscreen */
-			html {
-				height:100%;
-			}
-			body {
-				height:100%;
-				margin: 0px;
-				overflow:hidden; /* disable scrollbars */
-				font-size: 10pt;
-			}
-			/* fix for scroll bars on webkit & >=Mac OS X Lion */ 
-			::-webkit-scrollbar {
-				background-color: rgba(0,0,0,0.5);
-				width: 0.75em;
-			}
-			::-webkit-scrollbar-thumb {
-    			background-color:  rgba(255,255,255,0.5);
-			}
-		</style>	
-	</head>
-	<body>
-<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-		<script type="text/javascript" src="pano2vr_player.js">
-		</script>
-		<script type="text/javascript" src="skin.js">
-		</script>
-		<div id="container" style="width:100%;height:100%;">
-		<br>Loading...<br><br>
-		This content requires HTML5 with CSS3 3D Transforms or WebGL.
-		</div>
-		<script type="text/javascript">
-	
-			// create the panorama player with the container
-			pano=new pano2vrPlayer("container");
-		// add the skin object
-		skin=new pano2vrSkin(pano);
-		// load the configuration
-		window.addEventListener("load", function() {
-			pano.readConfigUrlAsync("pano.xml");
-		});
-		</script>
-		<noscript>
-			<p><b>Please enable Javascript!</b></p>
-		</noscript>
-<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
-		<!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
-		<div style="width:1px;height:1px;"></div>
-	</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <style type="text/css">
+        *{margin:0;padding:0;}
+
+        /*.info{position: absolute;width: 10px;height: 10px;background-color: pink; top:100px;left:100px;z-index: 9999;}
+        .info .head{width: 65px;height: 80px;background-image:url(./img/zb.png);background-repeat: no-repeat;background-size:100% 100%;position:absolute;z-index: 9999;top:-80px;left:-33px;-webkit-transform-origin:bottom;}
+        .info .head .userHead{width: 40px;height: 40px;border: 4px solid #fff;border-radius: 50%;overflow: hidden;background-color: blue;margin:5px auto;}
+        .info .head .userHead img{width: 44px;height: 44px;border-radius: 50%;}
+        .info .infoList{width: 240px;overflow:hidden;font-size:15px;background-color: rgba(0,0,0,.5);border-radius: 5px; position:absolute;top:-75px;left:-3px;padding:5px 5px 5px 45px;box-sizing: border-box;-webkit-box-sizing:border-box;display:none; -webkit-transform-origin:left;}
+        .info .infoList p{line-height: 22px;color:#fff;}
+        .info .infoList p:nth-child(1){display:flex;display:-webkit-flex;}
+        .info .infoList p span{white-space: nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom: 5px;}
+        .info .infoList p .name{flex:1;-webkit-flex:1;}
+        .info .infoList p .address{float:right;max-width: 100px;}
+        .info .infoList p .desc{color:#f5ff43;}
+        .clearfix::after,.clearfix::before{content: ".";line-height: 0;height: 0;display: block;visibility: hidden;clear: both;}
+        @-webkit-keyframes ani{
+            0%{-webkit-transform:scale3d(0,0,0);}
+            100%{-webkit-transform:scale3d(1,1,1);}
+        }
+        @-webkit-keyframes aniLeft{
+            0%{display:block;width:0;}
+            100%{width:240px;}
+        }*/
+        #target{position:absolute;top: 150px;left:50%;background-color:yellow;width: 100px;height: 100px;}
+        </style>
+    </head>
+    <body>
+    <button id="btn">按钮</button>
+        <div id="target"></div>
+    </body>
 </html>
+<script type="text/javascript" src="//a-h5.mtq.tvm.cn/yao/common/jc/xdTools-1.0.js"></script>
+<script type="text/javascript">
+var target=document.querySelector('#target')
+var data={
+        img:'./img/96.jpg'
+        ,name:'我是小明我是小明'
+        ,address:'北京北京北京东城东城'
+        ,number:'1'
+    };
+showAddress.flag=true;
+
+showAddress(target)
+function showAddress(target){
+    var DB=document.body
+        ,headimg=data.img
+        ,name=data.name
+        ,address=data.address
+        ,number=data.number
+        ,winW=DB.clientWidth
+        ,headW=0.11*winW
+        ,headH=0.15*winW
+        ,headImgW=0.07*winW
+        ,infoW=0.48*winW
+        ,html='<div class="head clearfix"><div class="userHead">\
+                    <img src="'+headimg+'"/></div></div>\
+                <div class="infoList">\
+                <p><span class="name">'+name+'</span><span class="address">'+address+'</span></p>\
+                <p><span class="desc">刚刚抢到'+number+'个现金红包</span></p>\
+                </div>'
+        ,info=createNode(target,'div',{className:'addInfo',html:html},'p2')
+        ,head=info.querySelector('.head')
+        ,infoList=info.querySelector('.infoList')
+        ;
+        if(showAddress.flag){
+            setStyle(".addInfo{position:relative;z-index: 9999;}"
+            +".addInfo .head{width: "+headW+"px;height: "+headH+"px;background-image:url(./img/zb.png);background-repeat: no-repeat;background-size:100% 100%;position:absolute;z-index: 9999;top:-"+headH+"px;left:-"+headW*0.5+"px;-webkit-transform-origin:bottom;}"
+            +".addInfo .head .userHead{width: "+headImgW+"px;height: "+headImgW+"px;border: "+0.008*winW+"px solid #fff;border-radius: 50%;overflow: hidden;background-color: blue;margin:5px auto;}"
+            +".addInfo .head .userHead img{width: "+headImgW+"px;height: "+headImgW+"px;border-radius: 50%;}"
+            +".addInfo .infoList{width: "+infoW+"px;overflow:hidden;font-size:12px;background-color: rgba(0,0,0,.6);border-radius: 5px; position:absolute;top:-"+headH*0.95+"px;left:0px;padding:5px 1px 5px "+headW*0.6+"px;box-sizing: border-box;-webkit-box-sizing:border-box;display:none; -webkit-transform-origin:left;}"
+            +".addInfo .infoList p{line-height: 15px;color:#fff;}"
+            +".addInfo .infoList p:nth-child(1){display:flex;display:-webkit-flex;}"
+            +".addInfo .infoList p span{white-space: nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom: 1px;}"
+            +".addInfo .infoList p .name{flex:1;-webkit-flex:1;}"
+            +".addInfo .infoList p .address{float:right;max-width: 50%;}"
+            +".addInfo .infoList p .desc{color:#f5ff43;}"
+            +".clearfix::after,.clearfix::before{content:'.';line-height: 0;height: 0;display: block;visibility: hidden;clear: both;}"
+            +"@keyframes ani{0%{-webkit-transform:scale3d(0,0,0);transform:scale3d(0,0,0);}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}}"
+            +"@-webkit-keyframes ani{0%{-webkit-transform:scale3d(0,0,0);transform:scale3d(0,0,0);}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1);}}"
+            +"@keyframes aniLeft{0%{display:block;width:0;}100%{width:"+infoW+"px;}}"
+            +"@-webkit-keyframes aniLeft{0%{display:block;width:0;}100%{width:"+infoW+"px;}}"
+            )
+            showAddress.flag=false;
+        }
+        head.style.webkitAnimation='ani 500ms ease-out';
+        setTimeout(function(){infoList.style.display="block";infoList.style.webkitAnimation='aniLeft 500ms ease-out';},500)
+}
+
+var btn=document.querySelector('#btn');
+btn.onclick=function(){
+    var info=document.querySelector('.addInfo');
+    target.removeChild(info);
+    showAddress(target)
+}
+</script>
