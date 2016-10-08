@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>今日我的运势是主动，你也来测测吧～</title>
+<link rel="shortcut icon" href="/ico/9.ico" type="image/x-icon">
+
+<!-- Bootstrap -->
+<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<img src="./images/9.jpg" style="position:absolute;width:0;height:0;">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./dist/js/bootstrap.min.js"></script>
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+
+<div id="cstart" class="container-fluid">
+    <a id="again" href="javascript:void(0);"></a>
+    <a id="share" href="javascript:void(0);"></a>
+</div>
+
+<div id="cshare">
+<div class="test"></div>
+</div>
+
+<style type="text/css">
+/*.container-fluid{padding:0;}
+.row{padding:0;}*/
+/*#cstart{background:url(/images/9.jpg);background-size:100% 90%;}*/
+/*#again, #share{border:1px solid #000;}*/
+body{width: 100%;
+    height: 100%;
+    background: url(./images/bg.png) center center;
+    background-size: 100% 100%;}
+#again{display:block;width:120px;height:60px;position:absolute;}
+#share{display:block;width:120px;height:60px;position:absolute;}
+#cshare{position:absolute;top:0;display:none;background:url(./images/share.png);background-size:100% 100%;}
+.test {
+            height:124px;width:95px;
+            position:fixed;
+            top:10%;
+            right: 4%;
+            -webkit-animation:big 1.5s  linear infinite alternate;
+            animation:big 1.5s linear infinite alternate;
+            background:url(./images/arrow.png) no-repeat;
+            background-size: 50% 50%;
+        }
+
+        @keyframes big {
+            0%{
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        @-webkit-keyframes big {
+            0%{
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+</style>
+<script type="text/javascript">
+$(function() {
+    var number=Math.ceil(Math.random()*15)+1;
+    $('#cstart').css('width', $(window).width());
+    $('#cstart').css('height', $(window).height());
+    $('#cstart').css('background', 'url(./images/'+number+'.png) no-repeat');
+    $('#cstart').css('background-position', '50% 50%');
+    $('#cstart').css('background-size', 'auto 100%');
+    $('#cshare').css('width', $(window).width());
+    $('#cshare').css('height', $(window).height());
+
+    $('#share').css('top', $(window).height() - 100);
+    $('#share').css('left', $(window).width() - ($(window).width() / 2) + 10);
+    $('#again').css('top', $(window).height() - 100);
+    $('#again').css('left', $(window).width() - ($(window).width() / 2) - 130);
+
+    $('#again').click(function() {
+        again();
+    });
+
+    $('#share').click(function() {
+        $('#cshare').show();
+    });
+    $('#cshare').click(function() {
+        $('#cshare').hide();
+    });
+
+    function again() {
+        location.href = '/yyy/qian?'+Math.floor(Math.random()*10);
+    }
+});
+
+</script>
+</body>
+</html>
